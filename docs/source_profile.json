@@ -1,0 +1,81 @@
+{
+  "dataset": "UCI Online Retail II",
+  "source_workbook": "data\\raw\\uci_online_retail_ii\\online_retail_II.xlsx",
+  "source_sheets": [
+    "Year 2009-2010",
+    "Year 2010-2011"
+  ],
+  "raw_rows_seen": 1067371,
+  "usable_rows_written": 1067371,
+  "valid_sale_lines": 1041670,
+  "cancellation_lines": 19494,
+  "return_lines": 22951,
+  "missing_customer_lines": 243007,
+  "date_min": "2009-12-01T07:45:00",
+  "date_max": "2011-12-09T12:50:00",
+  "distinct_countries": 43,
+  "distinct_stock_codes": 5304,
+  "top_countries_by_lines": [
+    [
+      "United Kingdom",
+      981330
+    ],
+    [
+      "EIRE",
+      17866
+    ],
+    [
+      "Germany",
+      17624
+    ],
+    [
+      "France",
+      14330
+    ],
+    [
+      "Netherlands",
+      5140
+    ],
+    [
+      "Spain",
+      3811
+    ],
+    [
+      "Switzerland",
+      3189
+    ],
+    [
+      "Belgium",
+      3123
+    ],
+    [
+      "Portugal",
+      2620
+    ],
+    [
+      "Australia",
+      1913
+    ],
+    [
+      "Channel Islands",
+      1664
+    ],
+    [
+      "Italy",
+      1534
+    ],
+    [
+      "Norway",
+      1455
+    ],
+    [
+      "Sweden",
+      1364
+    ],
+    [
+      "Cyprus",
+      1176
+    ]
+  ],
+  "generated_at": "2026-06-23T21:39:44"
+}

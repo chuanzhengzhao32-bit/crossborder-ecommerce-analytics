@@ -1,0 +1,27 @@
+-- Core Power BI measures for the star model.
+
+Revenue GBP = SUM(fact_order_profit[net_revenue_gbp])
+
+Gross Profit GBP = SUM(fact_order_profit[gross_profit_gbp])
+
+Gross Margin % = DIVIDE([Gross Profit GBP], [Revenue GBP])
+
+Pre-Ad Contribution GBP = SUM(fact_order_profit[pre_ad_contribution_gbp])
+
+Ad Spend GBP = SUM(fact_ad_spend_monthly[ad_spend_gbp])
+
+Contribution Profit GBP = [Pre-Ad Contribution GBP] - [Ad Spend GBP]
+
+Contribution Margin % = DIVIDE([Contribution Profit GBP], [Revenue GBP])
+
+Attributed Revenue GBP = SUM(fact_ad_spend_monthly[attributed_revenue_gbp])
+
+ROAS = DIVIDE([Attributed Revenue GBP], [Ad Spend GBP])
+
+Inventory Value GBP = SUM(fact_inventory_monthly[inventory_value_gbp])
+
+Average Turnover Days = AVERAGE(fact_inventory_monthly[turnover_days])
+
+Stockout SKU Count = SUM(fact_inventory_monthly[stockout_flag])
+
+Slow Moving SKU Count = SUM(fact_inventory_monthly[slow_moving_flag])

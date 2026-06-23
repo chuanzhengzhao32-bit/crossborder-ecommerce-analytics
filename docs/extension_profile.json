@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-06-23T23:42:48",
+  "random_seed": 20260623,
+  "gbp_to_cny": 9.15,
+  "tables": {
+    "dim_product": 4916,
+    "dim_market": 43,
+    "fact_order_profit": 1067371,
+    "fact_ad_spend_monthly": 700,
+    "fact_inventory_monthly": 19314
+  },
+  "disclosure": "Product cost, fees, ad spend, and inventory snapshots are deterministic synthetic extensions built on the public UCI transaction dataset."
+}

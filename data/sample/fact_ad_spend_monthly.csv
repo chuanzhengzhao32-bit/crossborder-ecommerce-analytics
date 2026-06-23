@@ -1,0 +1,121 @@
+﻿invoice_month,market_region,default_channel,category,campaign_name,ad_spend_gbp,attributed_revenue_gbp,attributed_order_lines,roas
+2009-12,APAC,shopify,Fashion Accessories,APAC | Fashion Accessories | shopify,3.4989,53.3,4,15.2334
+2009-12,APAC,shopify,General Merchandise,APAC | General Merchandise | shopify,0.2817,4.95,1,17.574
+2009-12,APAC,shopify,Gift & Stationery,APAC | Gift & Stationery | shopify,7.046,106.2,3,15.0723
+2009-12,APAC,shopify,Home Decor,APAC | Home Decor | shopify,2.1236,33.45,2,15.7519
+2009-12,APAC,shopify,Kitchen & Dining,APAC | Kitchen & Dining | shopify,2.7733,38.9,4,14.0264
+2009-12,Europe,amazon,Fashion Accessories,Europe | Fashion Accessories | amazon,263.1679,2459.4,95,9.3454
+2009-12,Europe,amazon,General Merchandise,Europe | General Merchandise | amazon,1787.9129,22803.84,467,12.7544
+2009-12,Europe,amazon,Gift & Stationery,Europe | Gift & Stationery | amazon,316.827,4229.57,97,13.3498
+2009-12,Europe,amazon,Home Decor,Europe | Home Decor | amazon,706.4348,6931.9,127,9.8125
+2009-12,Europe,amazon,Kids & Toys,Europe | Kids & Toys | amazon,84.7863,1261.8,22,14.8821
+2009-12,Europe,amazon,Kitchen & Dining,Europe | Kitchen & Dining | amazon,910.0647,8500.2,267,9.3402
+2009-12,Europe,amazon,Seasonal,Europe | Seasonal | amazon,12.6682,249.15,10,19.6673
+2009-12,North America,amazon,Gift & Stationery,North America | Gift & Stationery | amazon,10.6327,141.0,1,13.261
+2009-12,Other,shopify,General Merchandise,Other | General Merchandise | shopify,17.7616,243.79,8,13.7257
+2009-12,Other,shopify,Gift & Stationery,Other | Gift & Stationery | shopify,5.6467,70.8,2,12.5383
+2009-12,Other,shopify,Home Decor,Other | Home Decor | shopify,2.1476,30.0,2,13.969
+2009-12,Other,shopify,Kitchen & Dining,Other | Kitchen & Dining | shopify,4.4556,87.1,4,19.5485
+2009-12,Other,shopify,Seasonal,Other | Seasonal | shopify,1.5226,20.4,1,13.3985
+2009-12,UK,own_site,Fashion Accessories,UK | Fashion Accessories | own_site,737.6489,30333.7,1575,41.1221
+2009-12,UK,own_site,General Merchandise,UK | General Merchandise | own_site,5906.2144,195885.22,7265,33.166
+2009-12,UK,own_site,Gift & Stationery,UK | Gift & Stationery | own_site,1406.808,45355.52,1244,32.24
+2009-12,UK,own_site,Home Decor,UK | Home Decor | own_site,2569.9963,78218.72,3049,30.4353
+2009-12,UK,own_site,Kids & Toys,UK | Kids & Toys | own_site,118.6035,4119.67,323,34.7348
+2009-12,UK,own_site,Kitchen & Dining,UK | Kitchen & Dining | own_site,1827.1979,65992.6,3179,36.1168
+2009-12,UK,own_site,Seasonal,UK | Seasonal | own_site,141.2172,4811.46,275,34.0713
+2010-01,APAC,shopify,General Merchandise,APAC | General Merchandise | shopify,0.1487,2.95,1,19.843
+2010-01,Europe,amazon,Fashion Accessories,Europe | Fashion Accessories | amazon,886.845,11612.0,132,13.0936
+2010-01,Europe,amazon,General Merchandise,Europe | General Merchandise | amazon,2145.6179,34095.0,390,15.8905
+2010-01,Europe,amazon,Gift & Stationery,Europe | Gift & Stationery | amazon,854.9849,10304.7,72,12.0525
+2010-01,Europe,amazon,Home Decor,Europe | Home Decor | amazon,913.0486,9446.84,116,10.3465
+2010-01,Europe,amazon,Kids & Toys,Europe | Kids & Toys | amazon,166.3839,2215.65,22,13.3165
+2010-01,Europe,amazon,Kitchen & Dining,Europe | Kitchen & Dining | amazon,1114.6194,12878.57,214,11.5542
+2010-01,Europe,amazon,Seasonal,Europe | Seasonal | amazon,15.3766,271.5,2,17.6567
+2010-01,North America,amazon,Fashion Accessories,North America | Fashion Accessories | amazon,1.1486,14.35,2,12.4939
+2010-01,North America,amazon,General Merchandise,North America | General Merchandise | amazon,18.0478,265.7,12,14.722
+2010-01,North America,amazon,Gift & Stationery,North America | Gift & Stationery | amazon,10.8133,179.4,8,16.5907
+2010-01,North America,amazon,Home Decor,North America | Home Decor | amazon,10.4008,160.2,9,15.4027
+2010-01,North America,amazon,Kids & Toys,North America | Kids & Toys | amazon,1.178,11.7,2,9.9318
+2010-01,North America,amazon,Kitchen & Dining,North America | Kitchen & Dining | amazon,34.206,388.1,19,11.346
+2010-01,Other,shopify,Fashion Accessories,Other | Fashion Accessories | shopify,1.2098,23.4,3,19.342
+2010-01,Other,shopify,General Merchandise,Other | General Merchandise | shopify,16.5413,256.42,13,15.5018
+2010-01,Other,shopify,Gift & Stationery,Other | Gift & Stationery | shopify,0.8412,17.4,1,20.6842
+2010-01,Other,shopify,Home Decor,Other | Home Decor | shopify,12.6239,204.15,10,16.1717
+2010-01,Other,shopify,Kitchen & Dining,Other | Kitchen & Dining | shopify,10.8459,213.1,7,19.6479
+2010-01,UK,own_site,Fashion Accessories,UK | Fashion Accessories | own_site,765.9904,27680.44,1232,36.1368
+2010-01,UK,own_site,General Merchandise,UK | General Merchandise | own_site,3466.2937,138654.3,4939,40.0007
+2010-01,UK,own_site,Gift & Stationery,UK | Gift & Stationery | own_site,649.0862,24176.34,740,37.2467
+2010-01,UK,own_site,Home Decor,UK | Home Decor | own_site,1516.2043,57800.67,2699,38.122
+2010-01,UK,own_site,Kids & Toys,UK | Kids & Toys | own_site,120.3376,3698.01,216,30.7303
+2010-01,UK,own_site,Kitchen & Dining,UK | Kitchen & Dining | own_site,1147.586,41057.59,2181,35.7774
+2010-01,UK,own_site,Seasonal,UK | Seasonal | own_site,63.2761,1694.28,73,26.776
+2010-02,APAC,shopify,Fashion Accessories,APAC | Fashion Accessories | shopify,38.5143,604.15,15,15.6864
+2010-02,APAC,shopify,General Merchandise,APAC | General Merchandise | shopify,86.8235,1272.16,31,14.6522
+2010-02,APAC,shopify,Gift & Stationery,APAC | Gift & Stationery | shopify,6.8474,109.0,6,15.9184
+2010-02,APAC,shopify,Home Decor,APAC | Home Decor | shopify,15.6683,284.21,14,18.1392
+2010-02,APAC,shopify,Kids & Toys,APAC | Kids & Toys | shopify,4.8546,65.55,3,13.5026
+2010-02,APAC,shopify,Kitchen & Dining,APAC | Kitchen & Dining | shopify,2.6602,32.7,2,12.2924
+2010-02,Europe,amazon,Fashion Accessories,Europe | Fashion Accessories | amazon,656.558,5731.65,136,8.7298
+2010-02,Europe,amazon,General Merchandise,Europe | General Merchandise | amazon,2015.8123,23950.14,369,11.8811
+2010-02,Europe,amazon,Gift & Stationery,Europe | Gift & Stationery | amazon,338.8682,5005.77,112,14.772
+2010-02,Europe,amazon,Home Decor,Europe | Home Decor | amazon,292.7359,3971.45,80,13.5667
+2010-02,Europe,amazon,Kids & Toys,Europe | Kids & Toys | amazon,282.2775,3442.35,60,12.1949
+2010-02,Europe,amazon,Kitchen & Dining,Europe | Kitchen & Dining | amazon,655.126,7789.88,186,11.8907
+2010-02,Europe,amazon,Seasonal,Europe | Seasonal | amazon,2.6546,46.5,2,17.5169
+2010-02,Other,shopify,Fashion Accessories,Other | Fashion Accessories | shopify,2.19,43.5,3,19.8633
+2010-02,Other,shopify,General Merchandise,Other | General Merchandise | shopify,13.2493,165.9,10,12.5214
+2010-02,Other,shopify,Gift & Stationery,Other | Gift & Stationery | shopify,8.0213,150.8,9,18.8001
+2010-02,Other,shopify,Home Decor,Other | Home Decor | shopify,1.2853,17.4,1,13.5374
+2010-02,Other,shopify,Kitchen & Dining,Other | Kitchen & Dining | shopify,5.4033,78.21,6,14.4745
+2010-02,Other,shopify,Seasonal,Other | Seasonal | shopify,0.5991,15.0,1,25.0394
+2010-02,UK,own_site,Fashion Accessories,UK | Fashion Accessories | own_site,1278.1101,35311.08,1661,27.6276
+2010-02,UK,own_site,General Merchandise,UK | General Merchandise | own_site,2888.9847,121388.18,4947,42.0176
+2010-02,UK,own_site,Gift & Stationery,UK | Gift & Stationery | own_site,987.2229,27013.61,890,27.3632
+2010-02,UK,own_site,Home Decor,UK | Home Decor | own_site,1206.502,46622.23,2134,38.6425
+2010-02,UK,own_site,Kids & Toys,UK | Kids & Toys | own_site,112.9481,5544.85,345,49.092
+2010-02,UK,own_site,Kitchen & Dining,UK | Kitchen & Dining | own_site,1155.019,45561.41,2185,39.4465
+2010-02,UK,own_site,Seasonal,UK | Seasonal | own_site,71.6948,2159.25,94,30.1172
+2010-03,APAC,shopify,Fashion Accessories,APAC | Fashion Accessories | shopify,17.0278,330.3,18,19.3977
+2010-03,APAC,shopify,General Merchandise,APAC | General Merchandise | shopify,30.8214,508.47,18,16.4973
+2010-03,APAC,shopify,Gift & Stationery,APAC | Gift & Stationery | shopify,2.5819,34.5,2,13.3621
+2010-03,APAC,shopify,Home Decor,APAC | Home Decor | shopify,6.4228,70.8,2,11.0232
+2010-03,APAC,shopify,Kids & Toys,APAC | Kids & Toys | shopify,1.7723,31.2,2,17.6043
+2010-03,APAC,shopify,Kitchen & Dining,APAC | Kitchen & Dining | shopify,25.8403,387.94,15,15.013
+2010-03,Europe,amazon,Fashion Accessories,Europe | Fashion Accessories | amazon,362.2894,6597.1,174,18.2095
+2010-03,Europe,amazon,General Merchandise,Europe | General Merchandise | amazon,2945.2806,40881.12,542,13.8802
+2010-03,Europe,amazon,Gift & Stationery,Europe | Gift & Stationery | amazon,619.5737,7421.27,155,11.978
+2010-03,Europe,amazon,Home Decor,Europe | Home Decor | amazon,622.48,8064.28,123,12.9551
+2010-03,Europe,amazon,Kids & Toys,Europe | Kids & Toys | amazon,73.0591,1100.5,34,15.0631
+2010-03,Europe,amazon,Kitchen & Dining,Europe | Kitchen & Dining | amazon,731.2996,8925.02,267,12.2043
+2010-03,Europe,amazon,Seasonal,Europe | Seasonal | amazon,15.5903,183.0,6,11.7381
+2010-03,Other,shopify,Fashion Accessories,Other | Fashion Accessories | shopify,10.0406,141.0,8,14.043
+2010-03,Other,shopify,General Merchandise,Other | General Merchandise | shopify,29.8558,538.08,5,18.0226
+2010-03,Other,shopify,Kids & Toys,Other | Kids & Toys | shopify,28.2571,470.1,8,16.6365
+2010-03,Other,shopify,Kitchen & Dining,Other | Kitchen & Dining | shopify,7.2631,138.3,3,19.0415
+2010-03,UK,own_site,Fashion Accessories,UK | Fashion Accessories | own_site,1209.5031,45370.84,2261,37.512
+2010-03,UK,own_site,General Merchandise,UK | General Merchandise | own_site,6260.9991,215436.63,6979,34.4093
+2010-03,UK,own_site,Gift & Stationery,UK | Gift & Stationery | own_site,974.6199,41510.03,1400,42.591
+2010-03,UK,own_site,Home Decor,UK | Home Decor | own_site,2202.4106,64983.29,2664,29.5055
+2010-03,UK,own_site,Kids & Toys,UK | Kids & Toys | own_site,222.2963,9498.38,480,42.7285
+2010-03,UK,own_site,Kitchen & Dining,UK | Kitchen & Dining | own_site,1988.7006,66411.34,2881,33.3943
+2010-03,UK,own_site,Seasonal,UK | Seasonal | own_site,143.1455,5205.47,159,36.3649
+2010-04,APAC,shopify,Fashion Accessories,APAC | Fashion Accessories | shopify,38.8323,652.75,19,16.8095
+2010-04,APAC,shopify,General Merchandise,APAC | General Merchandise | shopify,77.2289,1449.59,30,18.77
+2010-04,APAC,shopify,Gift & Stationery,APAC | Gift & Stationery | shopify,7.5514,134.1,6,17.7584
+2010-04,APAC,shopify,Home Decor,APAC | Home Decor | shopify,16.5689,218.8,3,13.2055
+2010-04,APAC,shopify,Kids & Toys,APAC | Kids & Toys | shopify,7.0881,130.5,6,18.4112
+2010-04,APAC,shopify,Kitchen & Dining,APAC | Kitchen & Dining | shopify,62.5441,836.58,14,13.3758
+2010-04,Europe,amazon,Fashion Accessories,Europe | Fashion Accessories | amazon,617.2594,7457.05,158,12.0809
+2010-04,Europe,amazon,General Merchandise,Europe | General Merchandise | amazon,2302.4524,25873.37,531,11.2373
+2010-04,Europe,amazon,Gift & Stationery,Europe | Gift & Stationery | amazon,768.328,8700.72,165,11.3242
+2010-04,Europe,amazon,Home Decor,Europe | Home Decor | amazon,356.2864,3650.22,98,10.2452
+2010-04,Europe,amazon,Kids & Toys,Europe | Kids & Toys | amazon,99.0433,1434.45,47,14.4831
+2010-04,Europe,amazon,Kitchen & Dining,Europe | Kitchen & Dining | amazon,667.6177,8561.79,246,12.8244
+2010-04,Europe,amazon,Seasonal,Europe | Seasonal | amazon,42.7921,704.1,8,16.454
+2010-04,Other,shopify,Fashion Accessories,Other | Fashion Accessories | shopify,12.2876,194.3,12,15.8127
+2010-04,Other,shopify,General Merchandise,Other | General Merchandise | shopify,24.1351,344.89,15,14.29
+2010-04,Other,shopify,Gift & Stationery,Other | Gift & Stationery | shopify,1.4903,19.5,1,13.0847
+2010-04,Other,shopify,Home Decor,Other | Home Decor | shopify,2.0087,44.96,2,22.3831
+2010-04,Other,shopify,Kids & Toys,Other | Kids & Toys | shopify,2.9805,42.0,4,14.0914
+2010-04,Other,shopify,Kitchen & Dining,Other | Kitchen & Dining | shopify,7.0688,91.6,7,12.9584

@@ -1,0 +1,44 @@
+﻿country,market_region,shipping_zone,default_channel,platform_fee_rate,payment_fee_rate,logistics_base_gbp_per_unit
+Australia,APAC,Long-haul,shopify,0.045,0.024,0.78
+Austria,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Bahrain,APAC,Long-haul,shopify,0.045,0.024,0.78
+Belgium,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Bermuda,Other,Rest of World,shopify,0.045,0.024,0.65
+Brazil,Other,Rest of World,shopify,0.045,0.024,0.65
+Canada,North America,Long-haul,amazon,0.115,0.012,0.78
+Channel Islands,Other,Rest of World,shopify,0.045,0.024,0.65
+Cyprus,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Czech Republic,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Denmark,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+EIRE,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+European Community,Other,Rest of World,shopify,0.045,0.024,0.65
+Finland,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+France,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Germany,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Greece,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Hong Kong,APAC,Long-haul,shopify,0.045,0.024,0.78
+Iceland,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Israel,Other,Rest of World,shopify,0.045,0.024,0.65
+Italy,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Japan,APAC,Long-haul,shopify,0.045,0.024,0.78
+Korea,Other,Rest of World,shopify,0.045,0.024,0.65
+Lebanon,Other,Rest of World,shopify,0.045,0.024,0.65
+Lithuania,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Malta,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Netherlands,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Nigeria,Other,Rest of World,shopify,0.045,0.024,0.65
+Norway,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Poland,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Portugal,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+RSA,Other,Rest of World,shopify,0.045,0.024,0.65
+Saudi Arabia,Other,Rest of World,shopify,0.045,0.024,0.65
+Singapore,APAC,Long-haul,shopify,0.045,0.024,0.78
+Spain,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Sweden,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Switzerland,Europe,EU Cross-border,amazon,0.115,0.012,0.42
+Thailand,Other,Rest of World,shopify,0.045,0.024,0.65
+USA,North America,Long-haul,amazon,0.115,0.012,0.78
+United Arab Emirates,APAC,Long-haul,shopify,0.045,0.024,0.78
+United Kingdom,UK,UK Local,own_site,0.025,0.018,0.18
+Unspecified,Other,Rest of World,shopify,0.045,0.024,0.65
+West Indies,Other,Rest of World,shopify,0.045,0.024,0.65

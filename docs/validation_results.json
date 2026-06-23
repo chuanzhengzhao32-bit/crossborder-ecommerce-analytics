@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "all_required_files_exist": true,
+    "profit_has_no_negative_valid_revenue": true,
+    "profit_calculation_identity_sample": true,
+    "ad_spend_positive": true,
+    "roas_positive": true,
+    "inventory_non_negative": true,
+    "inventory_has_action_flags": true,
+    "sqlite_table_count": 6,
+    "sqlite_fact_order_profit_rows": 1067371,
+    "all_checks_passed": true
+  },
+  "sqlite_table_counts": {
+    "fact_order_lines": 1067371,
+    "dim_product": 4916,
+    "dim_market": 43,
+    "fact_order_profit": 1067371,
+    "fact_ad_spend_monthly": 700,
+    "fact_inventory_monthly": 19314
+  }
+}
