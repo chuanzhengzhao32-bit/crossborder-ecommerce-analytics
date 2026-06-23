@@ -1,5 +1,7 @@
 # Cross-Border E-commerce Profit & Inventory Analytics
 
+[中文说明](README.zh-CN.md) | English
+
 This is a portfolio project for a cross-border e-commerce data analyst role. It demonstrates the full workflow from public transaction data to KPI reporting, SQL analysis, BI modeling, and management-level business review.
 
 > Data disclosure: the transaction layer uses the real public UCI Online Retail II dataset. Product cost, platform/payment/logistics fees, ad spend, and inventory snapshots are deterministic synthetic extensions. The synthetic results demonstrate analytics methods and should not be presented as real company performance.
