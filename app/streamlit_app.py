@@ -20,7 +20,7 @@ from analytics_hub.report_generator import generate_markdown_report
 
 
 st.set_page_config(
-    page_title="跨境电商经营分析工具",
+    page_title="电商经营分析自动化工具",
     page_icon="📊",
     layout="wide",
 )
@@ -94,7 +94,7 @@ def format_display(df: pd.DataFrame) -> pd.DataFrame:
     return display.rename(columns=COLUMN_LABELS)
 
 
-st.title("跨境电商经营分析工具")
+st.title("电商经营分析自动化工具")
 st.caption("自动生成销售、利润、广告和库存经营复盘的分析工具原型。")
 
 with st.sidebar:
