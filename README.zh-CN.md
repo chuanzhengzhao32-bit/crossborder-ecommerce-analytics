@@ -43,6 +43,7 @@ Streamlit 页面支持：
 - 展示经营 KPI 卡片；
 - 展示月度收入、毛利、贡献利润趋势；
 - 展示品类利润和市场利润；
+- 识别 SKU × 地区推广机会；
 - 展示低 ROAS 广告组合；
 - 展示缺货和滞销 SKU；
 - 下载 Markdown 月度经营复盘。
@@ -67,6 +68,7 @@ Streamlit 页面支持：
 
 - [Analytics Hub Streamlit 工具入口](app/streamlit_app.py)
 - [系统设计说明](docs/system_design.md)
+- [SKU × 地区推广优先级模型](docs/sku_region_scoring_model.md)
 - [月度经营复盘](reports/monthly_business_review.md)
 - [面试讲解稿](docs/interview_guide.md)
 - [指标字典](docs/metric_dictionary.md)
@@ -79,7 +81,7 @@ Streamlit 页面支持：
 
 ## 面试时可以这样介绍
 
-我做了一个跨境电商经营分析工具原型。它可以把平台后台导出的订单、广告、库存和成本数据标准化，然后自动输出销售、毛利、贡献利润、ROAS、库存周转、缺货和滞销分析，并生成月度经营复盘。当前版本用 CSV 和样例数据演示，代码结构中预留了 Shopify、Amazon、ERP、WMS 和广告平台 API 的接入位置，展示的是把分析流程产品化和自动化的能力。
+我做了一个跨境电商经营分析工具原型。它可以把平台后台导出的订单、广告、库存和成本数据标准化，然后自动输出销售、毛利、贡献利润、ROAS、库存周转、缺货和滞销分析，并生成月度经营复盘。我还加入了 SKU × 地区推广优先级模型，用来判断哪些 SKU 在哪些地区更值得投入推广资源。当前版本用 CSV 和样例数据演示，代码结构中预留了 Shopify、Amazon、ERP、WMS 和广告平台 API 的接入位置，展示的是把分析流程产品化和自动化的能力。
 
 ## 数据来源
 

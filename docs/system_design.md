@@ -11,6 +11,7 @@ CSV / platform export / future API
   -> schema validation
   -> standardized profit, ad, and inventory tables
   -> KPI engine
+  -> SKU-region opportunity scoring
   -> automated diagnostics
   -> Streamlit operating dashboard
   -> downloadable monthly review
@@ -45,6 +46,7 @@ In a real company, these connector stubs can be replaced with:
 |---|---|
 | `analytics_hub/io.py` | Load default/sample/uploaded data and validate required columns |
 | `analytics_hub/kpi_engine.py` | Calculate monthly KPI scorecards, category profit, and market profit |
+| `analytics_hub/opportunity_model.py` | Score SKU-region combinations for promotion-resource prioritization |
 | `analytics_hub/diagnostics.py` | Find low-margin categories, low-ROAS campaigns, and inventory action items |
 | `analytics_hub/report_generator.py` | Generate downloadable Markdown business reviews |
 | `app/streamlit_app.py` | Web interface for uploads, KPI review, diagnostics, and report export |

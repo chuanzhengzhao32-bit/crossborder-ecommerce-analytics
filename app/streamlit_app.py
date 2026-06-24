@@ -15,6 +15,7 @@ if str(ROOT) not in sys.path:
 from analytics_hub.diagnostics import inventory_actions, low_margin_categories, low_roas_campaigns
 from analytics_hub.io import load_default_bundle, load_uploaded_bundle, validate_bundle
 from analytics_hub.kpi_engine import available_reporting_months, category_profit, current_month_kpis, market_profit, monthly_scorecard
+from analytics_hub.opportunity_model import sku_region_opportunity_score
 from analytics_hub.report_generator import generate_markdown_report
 
 
@@ -65,6 +66,17 @@ COLUMN_LABELS = {
     "slow_moving_flag": "滞销标记",
     "replenishment_recommendation": "建议动作",
     "inventory_value_gbp": "库存金额",
+    "region": "地区",
+    "total_orders": "订单数",
+    "active_periods": "活跃周期",
+    "units_sold": "销量",
+    "gmv_gbp": "GMV",
+    "sales_share": "销量贡献度",
+    "gmv_share": "GMV贡献度",
+    "sales_momentum": "销量增长动量",
+    "valid_order_rate": "有效订单率",
+    "opportunity_score": "综合得分",
+    "investment_tier": "投入分层",
 }
 
 
@@ -74,6 +86,8 @@ def format_display(df: pd.DataFrame) -> pd.DataFrame:
         if col.endswith("_gbp"):
             display[col] = display[col].map(money)
         elif "margin" in col:
+            display[col] = display[col].map(pct)
+        elif col in {"sales_share", "gmv_share", "valid_order_rate"}:
             display[col] = display[col].map(pct)
         elif col == "roas":
             display[col] = display[col].map(lambda x: f"{float(x):.1f}x")
@@ -144,7 +158,7 @@ trend = trend_scorecard.rename(
 ).set_index("月份")[["销售收入", "毛利", "贡献利润"]]
 st.line_chart(trend)
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["品类利润", "市场利润", "广告效率", "库存动作", "自动报告"])
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs(["品类利润", "市场利润", "SKU地区机会", "广告效率", "库存动作", "自动报告"])
 
 with tab1:
     st.write("用于识别“销售高但利润差”的品类，避免盲目扩大投放。")
@@ -168,16 +182,26 @@ with tab2:
         st.bar_chart(chart_market.set_index("市场区域")[["销售收入", "广告前贡献利润"]])
 
 with tab3:
+    st.write("用于判断哪个 SKU 在哪个地区更值得投入推广资源。")
+    st.caption("评分逻辑：销量贡献 30% + GMV贡献 25% + 增长动量 20% + 有效订单率 25%。")
+    opportunity = sku_region_opportunity_score(bundle)
+    if opportunity.empty:
+        st.warning("当前样例数据量较小，没有满足“订单数≥10且至少3个周期有订单”的 SKU × 地区组合。接入完整订单数据后会自动生成评分。")
+    else:
+        st.dataframe(format_display(opportunity.head(30)), use_container_width=True)
+        st.bar_chart(opportunity.head(15).set_index("stock_code")["opportunity_score"])
+
+with tab4:
     st.write("识别需要降预算、换素材或重新评估利润的低 ROAS 广告组合。")
     low_roas = low_roas_campaigns(bundle, selected_month)
     st.dataframe(format_display(low_roas), use_container_width=True)
 
-with tab4:
+with tab5:
     st.write("区分缺货风险 SKU 和滞销 SKU，分别做补货或清库存动作。")
     stock = inventory_actions(bundle, selected_month)
     st.dataframe(format_display(stock), use_container_width=True)
 
-with tab5:
+with tab6:
     report = generate_markdown_report(bundle, selected_month)
     st.download_button(
         "下载月度经营复盘",

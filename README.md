@@ -43,6 +43,7 @@ The Streamlit app provides:
 - executive KPI snapshot;
 - monthly revenue/profit trend;
 - category and market profit views;
+- SKU-region promotion opportunity scoring;
 - low-ROAS campaign list;
 - inventory action list;
 - one-click Markdown business review export.
@@ -67,6 +68,7 @@ Key interpretation:
 
 - [Analytics Hub Streamlit App](app/streamlit_app.py)
 - [System Design](docs/system_design.md)
+- [SKU-Region Promotion Scoring Model](docs/sku_region_scoring_model.md)
 - [Monthly Business Review](reports/monthly_business_review.md)
 - [Interview Guide](docs/interview_guide.md)
 - [Metric Dictionary](docs/metric_dictionary.md)
@@ -79,7 +81,7 @@ Technical setup and run notes are kept separately in [docs/reproducibility.md](d
 
 ## Interview Pitch
 
-I built a cross-border e-commerce analytics tool prototype that can standardize platform exports into operating metrics and business actions. It supports KPI reporting, contribution-profit analysis, ad-spend diagnostics, inventory risk detection, and downloadable business reviews. The current MVP uses CSV/sample data, while connector stubs show where Shopify, Amazon, ERP, WMS, or ad-platform APIs would be integrated in a real deployment.
+I built a cross-border e-commerce analytics tool prototype that can standardize platform exports into operating metrics and business actions. It supports KPI reporting, contribution-profit analysis, SKU-region promotion scoring, ad-spend diagnostics, inventory risk detection, and downloadable business reviews. The current MVP uses CSV/sample data, while connector stubs show where Shopify, Amazon, ERP, WMS, or ad-platform APIs would be integrated in a real deployment.
 
 ## Source
 
