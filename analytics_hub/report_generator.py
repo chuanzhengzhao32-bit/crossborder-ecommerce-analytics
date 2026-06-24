@@ -1,4 +1,4 @@
-"""Generate a compact Markdown business review from analytics outputs."""
+"""Generate a compact Chinese Markdown business review from analytics outputs."""
 
 from __future__ import annotations
 
@@ -14,19 +14,47 @@ def money(value: float) -> str:
     sign = "-" if value < 0 else ""
     value = abs(value)
     if value >= 1_000_000:
-        return f"{sign}£{value / 1_000_000:.2f}M"
+        return f"{sign}GBP {value / 1_000_000:.2f}M"
     if value >= 1_000:
-        return f"{sign}£{value / 1_000:.1f}k"
-    return f"{sign}£{value:.0f}"
+        return f"{sign}GBP {value / 1_000:.1f}k"
+    return f"{sign}GBP {value:.0f}"
 
 
 def percent(value: float) -> str:
     return f"{float(value) * 100:.1f}%"
 
 
+COLUMN_LABELS = {
+    "invoice_month": "月份",
+    "valid_orders": "有效订单",
+    "revenue_gbp": "销售收入",
+    "gross_profit_gbp": "毛利",
+    "gross_margin": "毛利率",
+    "pre_ad_contribution_gbp": "广告前贡献利润",
+    "ad_spend_gbp": "广告花费",
+    "contribution_profit_gbp": "贡献利润",
+    "contribution_margin": "贡献利润率",
+    "category": "品类",
+    "market_region": "市场区域",
+    "campaign_name": "广告组合",
+    "default_channel": "渠道",
+    "attributed_revenue_gbp": "归因收入",
+    "roas": "ROAS",
+    "stock_code": "SKU",
+    "sku_tier": "SKU分层",
+    "units_sold": "销量",
+    "closing_stock_units": "期末库存",
+    "turnover_days": "周转天数",
+    "stockout_flag": "缺货标记",
+    "slow_moving_flag": "滞销标记",
+    "replenishment_recommendation": "建议动作",
+    "inventory_value_gbp": "库存金额",
+}
+
+
 def _markdown_table(df: pd.DataFrame, max_rows: int = 8) -> str:
     if df.empty:
-        return "_No rows._"
+        return "_没有数据。_"
     display = df.head(max_rows).copy()
     for col in display.columns:
         if col.endswith("_gbp"):
@@ -35,6 +63,7 @@ def _markdown_table(df: pd.DataFrame, max_rows: int = 8) -> str:
             display[col] = display[col].map(percent)
         elif col == "roas":
             display[col] = display[col].map(lambda x: f"{float(x):.1f}x")
+    display = display.rename(columns=COLUMN_LABELS)
     text = display.fillna("").astype(str).map(lambda x: x.replace("|", "\\|"))
     headers = list(text.columns)
     rows = text.values.tolist()
@@ -43,6 +72,30 @@ def _markdown_table(df: pd.DataFrame, max_rows: int = 8) -> str:
     sep = "| " + " | ".join("-" * widths[i] for i in range(len(headers))) + " |"
     body = ["| " + " | ".join(str(row[i]).ljust(widths[i]) for i in range(len(headers))) + " |" for row in rows]
     return "\n".join([header, sep, *body])
+
+
+def _translate_recommendations(recommendations: list[str]) -> list[str]:
+    translated = []
+    for item in recommendations:
+        item = item.replace(
+            "Review pricing, cost, and traffic allocation for low-margin category:",
+            "复盘低利润品类的定价、成本和流量分配：",
+        )
+        item = item.replace("Cap or test down low-ROAS campaign:", "降低或测试下调低 ROAS 广告组合：")
+        item = item.replace(
+            "Prioritize replenishment for stockout-risk SKUs before scaling ads.",
+            "在扩大广告投放前，优先补货有缺货风险的 SKU。",
+        )
+        item = item.replace(
+            "Reduce purchasing or create clearance bundles for slow-moving SKUs.",
+            "对滞销 SKU 减少采购，或通过组合/促销清库存。",
+        )
+        item = item.replace(
+            "No critical exception was detected in the selected period; continue monitoring next month.",
+            "本期未发现明显异常，下月继续监控。",
+        )
+        translated.append(item)
+    return translated
 
 
 def generate_markdown_report(bundle: DataBundle, month: str) -> str:
@@ -55,41 +108,41 @@ def generate_markdown_report(bundle: DataBundle, month: str) -> str:
     low_margin = low_margin_categories(bundle, month)
     low_roas = low_roas_campaigns(bundle, month)
     stock = inventory_actions(bundle, month)
-    recommendations = recommendation_text(bundle, month)
+    recommendations = _translate_recommendations(recommendation_text(bundle, month))
     rec_md = "\n".join([f"{idx + 1}. {item}" for idx, item in enumerate(recommendations)])
-    return f"""# Cross-Border E-commerce Operating Review
+    return f"""# 跨境电商月度经营复盘
 
-## Executive Summary
+## 经营摘要
 
-- Reporting month: **{month}**
-- Revenue: **{money(kpis.get("revenue_gbp", 0))}**
-- Gross margin: **{percent(kpis.get("gross_margin", 0))}**
-- Contribution profit: **{money(kpis.get("contribution_profit_gbp", 0))}**
-- Contribution margin: **{percent(kpis.get("contribution_margin", 0))}**
-- Stockout SKUs: **{kpis.get("stockout_skus", 0)}**
-- Slow-moving SKUs: **{kpis.get("slow_moving_skus", 0)}**
+- 分析月份：**{month}**
+- 销售收入：**{money(kpis.get("revenue_gbp", 0))}**
+- 毛利率：**{percent(kpis.get("gross_margin", 0))}**
+- 贡献利润：**{money(kpis.get("contribution_profit_gbp", 0))}**
+- 贡献利润率：**{percent(kpis.get("contribution_margin", 0))}**
+- 缺货 SKU：**{kpis.get("stockout_skus", 0)}**
+- 滞销 SKU：**{kpis.get("slow_moving_skus", 0)}**
 
-## KPI Scorecard
+## KPI 总览
 
 {_markdown_table(scorecard)}
 
-## Low-Margin Categories
+## 低利润品类
 
 {_markdown_table(low_margin)}
 
-## Low-ROAS Campaigns
+## 低 ROAS 广告组合
 
 {_markdown_table(low_roas)}
 
-## Inventory Action List
+## 库存动作清单
 
 {_markdown_table(stock)}
 
-## Recommended Actions
+## 建议动作
 
 {rec_md}
 
-## Data Boundary
+## 数据边界
 
-Transaction lines come from public UCI Online Retail II data. Cost, fee, ad, and inventory fields are synthetic operating extensions for portfolio demonstration.
+订单交易数据来自 UCI Online Retail II 公开数据。成本、费用、广告和库存字段为作品集演示用的模拟经营扩展数据。
 """
