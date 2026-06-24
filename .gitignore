@@ -13,3 +13,4 @@ data/processed/*
 !data/processed/.gitkeep
 reports/screenshots/*
 !reports/screenshots/.gitkeep
+!reports/screenshots/*.png

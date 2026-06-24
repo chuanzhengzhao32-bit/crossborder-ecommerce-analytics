@@ -69,6 +69,28 @@ Streamlit 页面支持：
 | 40-60 分 | 观察优化 |
 | 40 分以下 | 缩减测试 |
 
+## 界面截图
+
+### 经营 KPI 总览
+
+![经营 KPI 总览](reports/screenshots/01-kpi-overview.png)
+
+### 品类利润
+
+![品类利润](reports/screenshots/02-category-profit.png)
+
+### 市场利润
+
+![市场利润](reports/screenshots/03-market-profit.png)
+
+### 广告效率
+
+![广告效率](reports/screenshots/04-ad-efficiency.png)
+
+### 自动报告
+
+![自动报告](reports/screenshots/05-auto-report.png)
+
 ## 经营报表示例
 
 最新完整分析月为 2011-11，对比 2011-10。
