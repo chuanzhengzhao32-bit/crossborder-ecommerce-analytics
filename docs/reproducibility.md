@@ -16,6 +16,14 @@ python scripts/validate_data.py
 python scripts/export_samples.py
 ```
 
+## How to launch the Analytics Hub app
+
+```powershell
+streamlit run app/streamlit_app.py
+```
+
+The app uses generated full-size processed data when available. If the full data is not present, it falls back to committed sample CSVs under `data/sample/`.
+
 ## Data policy
 
 - `data/raw/` is not committed. It contains the downloaded source workbook.

@@ -1,35 +1,51 @@
-# Cross-Border E-commerce Analytics Portfolio
+# Cross-Border E-commerce Analytics Hub
 
 [中文说明](README.zh-CN.md) | English
 
-This portfolio project demonstrates how a cross-border e-commerce data analyst can turn order, cost, advertising, and inventory data into business decisions. It is designed for hiring review: the focus is not on tool usage, but on analytical thinking, metric design, KPI reporting, and action recommendations.
+This project is a hiring-oriented prototype of an integrated cross-border e-commerce analytics tool. It shows how platform exports or future APIs can be standardized into a reusable operating-review workflow: KPI calculation, profit analysis, ad-spend diagnostics, inventory risk detection, and downloadable business reviews.
 
-## Project Summary
+The project is not positioned as a code tutorial. It is positioned as an analyst-built solution that business teams could reuse.
 
-The project uses the public UCI Online Retail II transaction dataset as the real order layer, then adds clearly labeled synthetic operating data for product cost, platform fees, payment fees, logistics, ad spend, and inventory snapshots.
+## Solution Concept
 
-The goal is to reproduce a realistic e-commerce operating review:
+```text
+Platform backend / CSV export / future API
+  -> standardized order, cost, ad, and inventory tables
+  -> automated data validation
+  -> KPI and profit engine
+  -> ad and inventory diagnostics
+  -> Streamlit operating dashboard
+  -> monthly business review export
+```
 
-- sales and order performance;
-- gross margin and contribution profit;
-- advertising spend and ROAS;
-- category, market, and SKU profitability;
-- inventory turnover, stockout risk, and slow-moving SKUs;
-- monthly business review with next-step recommendations.
+The current MVP supports CSV/sample data. Connector stubs are included for future Shopify, Amazon, ERP, WMS, and ad-platform integrations.
 
-> Data disclosure: transaction data is real public data. Cost, advertising, and inventory data are simulated for portfolio demonstration and should not be interpreted as real company performance.
+> Data disclosure: transaction data is real public UCI Online Retail II data. Cost, advertising, and inventory fields are synthetic operating extensions for portfolio demonstration.
 
-## Role Fit
+## What the Tool Demonstrates
 
-| Hiring requirement | Portfolio evidence |
+| Business need | Tool capability |
 |---|---|
-| Weekly/monthly business reporting | Monthly business review with KPI scorecard and recommendations |
-| Sales, gross margin, fees, and contribution profit | Profit model covering revenue, product cost, platform/payment/logistics fees, ad spend, and contribution profit |
-| Channel, market, category, and SKU analysis | Segment analysis by market, channel, category, and SKU tier |
-| Advertising cost and profit analysis | ROAS and ad-spend efficiency review |
-| Inventory turnover, stockout, and slow-moving analysis | Inventory action list and replenishment/clearance recommendations |
-| Data dictionary and metric consistency | Data dictionary, metric dictionary, and model notes |
-| SQL and BI readiness | SQL analysis scripts, Power BI model notes, and DAX measures |
+| Recurring weekly/monthly reporting | Auto-generated KPI scorecard and monthly review |
+| Sales, gross margin, fees, and contribution profit | Standard profit engine covering revenue, costs, fees, ads, and contribution profit |
+| Market, channel, category, and SKU analysis | Segment-level profitability tables and visual review |
+| Advertising efficiency review | Low-ROAS campaign diagnostics and budget-control suggestions |
+| Inventory action management | Stockout-risk and slow-moving SKU detection |
+| Multi-source integration mindset | CSV connector plus API connector stubs for future platform integration |
+| BI/data-model readiness | SQL scripts, data dictionary, metric dictionary, model notes, and DAX measures |
+
+## Dashboard Prototype
+
+The Streamlit app provides:
+
+- data-source selection using generated data, sample data, or uploaded CSV files;
+- required-field validation;
+- executive KPI snapshot;
+- monthly revenue/profit trend;
+- category and market profit views;
+- low-ROAS campaign list;
+- inventory action list;
+- one-click Markdown business review export.
 
 ## Business Findings Example
 
@@ -47,8 +63,10 @@ Key interpretation:
 - Ad budget should be reviewed together with contribution margin and inventory availability.
 - Inventory actions should separate stockout-risk SKUs from slow-moving SKUs.
 
-## Deliverables
+## Main Deliverables
 
+- [Analytics Hub Streamlit App](app/streamlit_app.py)
+- [System Design](docs/system_design.md)
 - [Monthly Business Review](reports/monthly_business_review.md)
 - [Interview Guide](docs/interview_guide.md)
 - [Metric Dictionary](docs/metric_dictionary.md)
@@ -57,11 +75,11 @@ Key interpretation:
 - [Power BI DAX Measures](powerbi/dax_measures.dax)
 - [Sample Data Preview](data/sample)
 
-Technical reproducibility notes are kept separately in [docs/reproducibility.md](docs/reproducibility.md) so the portfolio homepage stays focused on hiring review.
+Technical setup and run notes are kept separately in [docs/reproducibility.md](docs/reproducibility.md), so the homepage remains focused on hiring review.
 
 ## Interview Pitch
 
-I built a cross-border e-commerce analytics portfolio using real public order data and clearly labeled synthetic operating data. The project covers order cleaning, metric definition, SQL analysis, profit modeling, ad-spend review, inventory risk analysis, and a monthly business review. The main value is showing how I translate sales, cost, advertising, and inventory data into business actions such as budget reallocation, replenishment, and slow-moving stock control.
+I built a cross-border e-commerce analytics tool prototype that can standardize platform exports into operating metrics and business actions. It supports KPI reporting, contribution-profit analysis, ad-spend diagnostics, inventory risk detection, and downloadable business reviews. The current MVP uses CSV/sample data, while connector stubs show where Shopify, Amazon, ERP, WMS, or ad-platform APIs would be integrated in a real deployment.
 
 ## Source
 
