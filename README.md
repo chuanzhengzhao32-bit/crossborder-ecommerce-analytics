@@ -1,165 +1,70 @@
-# Cross-Border E-commerce Profit & Inventory Analytics
+# Cross-Border E-commerce Analytics Portfolio
 
 [中文说明](README.zh-CN.md) | English
 
-This is a portfolio project for a cross-border e-commerce data analyst role. It demonstrates the full workflow from public transaction data to KPI reporting, SQL analysis, BI modeling, and management-level business review.
+This portfolio project demonstrates how a cross-border e-commerce data analyst can turn order, cost, advertising, and inventory data into business decisions. It is designed for hiring review: the focus is not on tool usage, but on analytical thinking, metric design, KPI reporting, and action recommendations.
 
-> Data disclosure: the transaction layer uses the real public UCI Online Retail II dataset. Product cost, platform/payment/logistics fees, ad spend, and inventory snapshots are deterministic synthetic extensions. The synthetic results demonstrate analytics methods and should not be presented as real company performance.
+## Project Summary
 
-## Business Questions
+The project uses the public UCI Online Retail II transaction dataset as the real order layer, then adds clearly labeled synthetic operating data for product cost, platform fees, payment fees, logistics, ad spend, and inventory snapshots.
 
-The project answers the operating questions that commonly appear in cross-border e-commerce analytics work:
+The goal is to reproduce a realistic e-commerce operating review:
 
-1. Which markets, channels, categories, and SKUs drive sales?
-2. Does sales growth convert into gross profit and contribution profit?
-3. Which ad combinations have low ROAS and should be capped or reallocated?
-4. Which SKUs are at stockout risk, and which SKUs are slow-moving?
-5. What actions should operations, marketing, purchasing, and finance take next month?
+- sales and order performance;
+- gross margin and contribution profit;
+- advertising spend and ROAS;
+- category, market, and SKU profitability;
+- inventory turnover, stockout risk, and slow-moving SKUs;
+- monthly business review with next-step recommendations.
 
-## Current Deliverables
+> Data disclosure: transaction data is real public data. Cost, advertising, and inventory data are simulated for portfolio demonstration and should not be interpreted as real company performance.
 
-- Reproducible download and cleaning workflow for UCI Online Retail II.
-- Source profile and data-quality validation.
-- Synthetic operating extension tables for cost, fees, ad spend, and inventory.
-- SQLite database for SQL analysis.
-- SQL scripts for KPI, profit, and inventory analysis.
-- Power BI model notes and DAX measure definitions.
-- Monthly business review report with executive summary and action recommendations.
-- Interview guide explaining how to present the project honestly.
+## Role Fit
 
-## Data Pipeline
-
-```text
-UCI Online Retail II workbook
-  -> fact_order_lines.csv
-  -> product / market / profit / ads / inventory extension tables
-  -> ecommerce_analytics.sqlite
-  -> SQL analysis + monthly business review + Power BI model
-```
-
-## Repository Structure
-
-```text
-crossborder-ecommerce-analytics/
-├─ README.md
-├─ requirements.txt
-├─ data/
-│  ├─ raw/              # ignored; source workbook is downloaded here
-│  ├─ processed/        # ignored; generated CSV/SQLite files are written here
-│  └─ sample/           # committed small CSV previews for GitHub reviewers
-├─ scripts/
-│  ├─ download_source_data.py
-│  ├─ prepare_orders.py
-│  ├─ generate_extensions.py
-│  ├─ build_database.py
-│  ├─ run_analysis.py
-│  ├─ export_samples.py
-│  ├─ validate_source_data.py
-│  └─ validate_data.py
-├─ sql/
-│  ├─ 01_schema.sql
-│  ├─ 02_kpi_analysis.sql
-│  ├─ 03_profit_analysis.sql
-│  └─ 04_inventory_analysis.sql
-├─ docs/
-│  ├─ source_and_license.md
-│  ├─ source_profile.json
-│  ├─ extension_profile.json
-│  ├─ validation_results.json
-│  ├─ data_dictionary.md
-│  ├─ metric_dictionary.md
-│  ├─ data_model.md
-│  └─ interview_guide.md
-├─ powerbi/
-│  ├─ README.md
-│  └─ dax_measures.dax
-├─ reports/
-│  ├─ monthly_business_review.md
-│  └─ analysis_summary.json
-└─ tests/
-   └─ test_data_quality.py
-```
-
-## How to Run
-
-```powershell
-python -m pip install -r requirements.txt
-python scripts/download_source_data.py
-python scripts/prepare_orders.py
-python scripts/validate_source_data.py
-python scripts/generate_extensions.py
-python scripts/build_database.py
-python scripts/run_analysis.py
-python scripts/validate_data.py
-python scripts/export_samples.py
-```
-
-The generated raw and processed datasets are intentionally ignored by Git because the workbook and full CSV outputs are large. Anyone can rebuild them by running the scripts above.
-
-Small table previews are committed under [data/sample](data/sample).
-
-## Generated Tables
-
-After the full pipeline runs, the local SQLite database contains:
-
-| Table | Grain | Purpose |
-|---|---|---|
-| `fact_order_lines` | transaction line | cleaned public order data |
-| `dim_product` | SKU | category, SKU tier, synthetic unit cost |
-| `dim_market` | country | market region, channel, fee/logistics assumptions |
-| `fact_order_profit` | transaction line | revenue, cost, fees, gross profit, pre-ad contribution |
-| `fact_ad_spend_monthly` | month-market-channel-category | synthetic ad spend, attributed revenue, ROAS |
-| `fact_inventory_monthly` | month-SKU | stock, turnover days, stockout and slow-moving flags |
-
-## KPI Framework
-
-| KPI | Definition |
+| Hiring requirement | Portfolio evidence |
 |---|---|
-| Revenue | valid sale line revenue |
-| Gross Profit | revenue - product cost |
-| Gross Margin | gross profit / revenue |
-| Pre-Ad Contribution | gross profit - platform fee - payment fee - logistics fee |
-| Contribution Profit | pre-ad contribution - ad spend |
-| Contribution Margin | contribution profit / revenue |
-| ROAS | attributed revenue / ad spend |
-| Inventory Turnover Days | average inventory cost / COGS × days |
-| Stockout Flag | closing stock below short-term demand threshold |
-| Slow-Moving Flag | high turnover days with material stock balance |
+| Weekly/monthly business reporting | Monthly business review with KPI scorecard and recommendations |
+| Sales, gross margin, fees, and contribution profit | Profit model covering revenue, product cost, platform/payment/logistics fees, ad spend, and contribution profit |
+| Channel, market, category, and SKU analysis | Segment analysis by market, channel, category, and SKU tier |
+| Advertising cost and profit analysis | ROAS and ad-spend efficiency review |
+| Inventory turnover, stockout, and slow-moving analysis | Inventory action list and replenishment/clearance recommendations |
+| Data dictionary and metric consistency | Data dictionary, metric dictionary, and model notes |
+| SQL and BI readiness | SQL analysis scripts, Power BI model notes, and DAX measures |
 
-Full definitions are in [docs/metric_dictionary.md](docs/metric_dictionary.md).
+## Business Findings Example
 
-## Latest Local Run
+The latest complete reporting month in the project is 2011-11, compared with 2011-10.
 
-The latest generated profile contains:
+| Month | Valid orders | Revenue | Gross margin | Ad spend | Contribution profit | Contribution margin |
+|---|---:|---:|---:|---:|---:|---:|
+| 2011-10 | 2,040 | £1.15M | 40.0% | £26.1k | £225.1k | 19.5% |
+| 2011-11 | 2,769 | £1.51M | 24.4% | £36.9k | £88.4k | 5.9% |
 
-- 1,067,371 order lines.
-- 4,916 product dimension rows.
-- 43 country/market rows.
-- 1,067,371 profit fact rows.
-- 700 monthly ad-spend rows.
-- 19,314 monthly inventory rows.
-- All validation checks passed.
+Key interpretation:
 
-The business review uses 2011-11 as the latest complete month and compares it with 2011-10. The partial 2011-12 source period is excluded from headline month-over-month interpretation.
+- Revenue increased, but contribution profit declined, so growth quality weakened.
+- High-revenue categories are not necessarily high-profit categories.
+- Ad budget should be reviewed together with contribution margin and inventory availability.
+- Inventory actions should separate stockout-risk SKUs from slow-moving SKUs.
 
-## Power BI Dashboard Plan
+## Deliverables
 
-1. Business Overview: revenue, orders, gross margin, contribution profit, trend.
-2. Store/SKU Profit: category, SKU tier, market, and channel profitability.
-3. Ad Efficiency: spend, attributed revenue, ROAS, low-efficiency campaigns.
-4. Inventory Action List: stockout risk, slow-moving SKUs, turnover days, replenishment recommendation.
+- [Monthly Business Review](reports/monthly_business_review.md)
+- [Interview Guide](docs/interview_guide.md)
+- [Metric Dictionary](docs/metric_dictionary.md)
+- [Data Dictionary](docs/data_dictionary.md)
+- [Data Model Notes](docs/data_model.md)
+- [Power BI DAX Measures](powerbi/dax_measures.dax)
+- [Sample Data Preview](data/sample)
 
-## Interview Positioning
+Technical reproducibility notes are kept separately in [docs/reproducibility.md](docs/reproducibility.md) so the portfolio homepage stays focused on hiring review.
 
-Use this project as a realistic analyst portfolio project:
+## Interview Pitch
 
-- Say clearly which data is public and which data is synthetic.
-- Emphasize the business logic: cost model, fee model, ROAS, contribution profit, inventory actions.
-- Explain that in a real company the synthetic tables would be replaced by ERP, finance, ad-platform, platform backend, and warehouse exports.
-- Do not claim the synthetic profit or inventory numbers as real company performance.
+I built a cross-border e-commerce analytics portfolio using real public order data and clearly labeled synthetic operating data. The project covers order cleaning, metric definition, SQL analysis, profit modeling, ad-spend review, inventory risk analysis, and a monthly business review. The main value is showing how I translate sales, cost, advertising, and inventory data into business actions such as budget reallocation, replenishment, and slow-moving stock control.
 
 ## Source
 
 UCI Machine Learning Repository: Online Retail II  
-Dataset DOI: <https://doi.org/10.24432/C5CG6D>  
+DOI: <https://doi.org/10.24432/C5CG6D>  
 License: CC BY 4.0
